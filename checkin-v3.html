@@ -9419,49 +9419,15 @@
                 // 候选词容器
                 this.e_inputarea_candidates = this.container.querySelector(".chat-session-inputarea-candidates");
 
-                // 公共短语，这里留空，初始化为空——修改1
-                const commonPhrases = [        
+                // 公共短语
+                const commonPhrases = [
+                  // 日常聊天（前 200 条）
+  
+                  
                 ];
 
- // 渲染候选词到页面按钮
-    function renderCandidates(phrases) {
-      const container = document.querySelector(".chat-session-inputarea-candidates");
-      container.innerHTML = ""; // 清空
-      phrases.forEach(word => {
-        const btn = document.createElement("button");
-        btn.textContent = word;
-        btn.onclick = () => {
-          const input = document.querySelector(".chat-session-inputarea");
-          input.value = word;
-          input.focus();
-        };
-        container.appendChild(btn);
-      });
-    }
 
-		// 异步加载数据库候选词
-    async function loadCommonPhrases() {
-      try {
-        const res = await fetch("/api/phrases");
-        if (!res.ok) throw new Error("加载失败");
-
-        const phrases = await res.json();
-
-        // 清空原数组并填充数据库数据
-        commonPhrases.length = 0;
-        commonPhrases.push(...phrases);
-
-        // 渲染按钮
-        renderCandidates(commonPhrases);
-
-        console.log("commonPhrases:", commonPhrases);
-
-      } catch (err) {
-        console.error("加载快捷短语失败", err);
-      }
-    }
-    // 页面加载完成时调用
-    window.addEventListener("DOMContentLoaded", loadCommonPhrases);		
+				
 
 				// =============================
 				// 🔥 半屏候选词渲染
