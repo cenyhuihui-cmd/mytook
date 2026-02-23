@@ -9419,13 +9419,24 @@
                 // 候选词容器
                 this.e_inputarea_candidates = this.container.querySelector(".chat-session-inputarea-candidates");
 
-                // 公共短语
-                const commonPhrases = [
-                  // 日常聊天（前 200 条）
-                  "你好"
-  
-                  
+                // 公共短语，这里留空，初始化为空——修改1
+                const commonPhrases = [        
                 ];
+
+async function loadCommonPhrases() {
+  try {
+    const res = await fetch("/api/phrases");
+    if (!res.ok) throw new Error("加载失败");
+
+    const phrases = await res.json();
+
+    // 1️⃣ 清空原数组
+    commonPhrases.length = 0;
+
+    // 2️⃣ 把数据库候选词填入原数组
+    commonPhrases.push(...phrases);
+
+    console.log("commonPhrases:", commonPhrases);
 
 
 				
