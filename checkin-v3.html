@@ -9995,7 +9995,17 @@
         </div>
     </div>
 </div>
+<!-- AI咨询弹窗 -->
+<div id="ai-alert-modal" class="ai-alert-modal hidden">
+    <div class="ai-alert-content">
+        <p id="ai-alert-text"></p>
+        <button id="ai-alert-ok">知道了</button>
+    </div>
+</div>
 
+
+</div>
+`;
 
                 this.container.insertAdjacentHTML("beforeend", html);
                 this.chat_rect = this.container.querySelector(":scope div.chat-rect");
