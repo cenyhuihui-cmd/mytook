@@ -9939,7 +9939,11 @@
         <button class="chat-session-inputarea-othertypes-write">
             ✍️写字
         </button>
-
+        <button
+            class="chat-session-inputarea-othertypes-ai"
+            title="让 AI 用通俗的方式一步一步教你解决问题，快捷键ctrl+shift+回车">
+            🤖 AI咨询
+        </button>
 
     </div>
 
@@ -9997,7 +10001,12 @@
     </div>
 </div>
 <!-- AI咨询弹窗 -->
-
+<div id="ai-alert-modal" class="ai-alert-modal hidden">
+    <div class="ai-alert-content">
+        <p id="ai-alert-text"></p>
+        <button id="ai-alert-ok">知道了</button>
+    </div>
+</div>
 
 
 </div>
@@ -10180,7 +10189,10 @@
                 // 文本输入
                 this.e_inputarea_textarea = this.container.querySelector(".chat-session-inputarea-textarea");
                 
-      
+                // AI咨询
+                this.e_ai_teacher_btn = this.container.querySelector(
+                    ".chat-session-inputarea-othertypes-ai"
+                );
 
 
                // 1️⃣ 先绑定快捷键，独立于点击事件
@@ -12703,7 +12715,10 @@
                                 this.contentpage.forward_msg(this.msgattr);
                                 break;
 
-               
+                            case "ai":
+                                // AI咨询逻辑
+                                this.contentpage.open_ai_consult(this.msgattr);
+                                break;
 
                             case "edit":
                                 // 编辑逻辑
@@ -17650,6 +17665,7 @@ textarea.addEventListener('input', () => {
 </script>
 <!---->
 <!-- ChatGPT 悬浮按钮 -->
+
 
 </body>
 
