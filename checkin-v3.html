@@ -10180,10 +10180,7 @@
                 // 文本输入
                 this.e_inputarea_textarea = this.container.querySelector(".chat-session-inputarea-textarea");
                 
-                // AI咨询
-                this.e_ai_teacher_btn = this.container.querySelector(
-                    ".chat-session-inputarea-othertypes-ai"
-                );
+      
 
 
                // 1️⃣ 先绑定快捷键，独立于点击事件
@@ -12706,10 +12703,7 @@
                                 this.contentpage.forward_msg(this.msgattr);
                                 break;
 
-                            case "ai":
-                                // AI咨询逻辑
-                                this.contentpage.open_ai_consult(this.msgattr);
-                                break;
+               
 
                             case "edit":
                                 // 编辑逻辑
