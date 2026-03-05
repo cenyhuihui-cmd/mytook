@@ -10193,22 +10193,7 @@
                     }
                 });
 
-                // 2️⃣ 点击 AI 咨询按钮
-                this.e_ai_teacher_btn.addEventListener("click", () => {
-                    const userText = this.e_inputarea_textarea.value.trim();
-
-                    if (!userText) {
-                        showAiAlert("🤖 输入框没有输入问题，请在输入框先输入你的问题，然后 AI 老师才能帮你讲解哦！");
-                        return;
-                    }
-
-                    const prompt = build_ai_teacher_prompt(userText);
-                    const encodedPrompt = encodeURIComponent(prompt);
-
-                    // 跳转 AI 咨询页面
-                    window.open(`https://chatgpt.com/?q=${encodedPrompt}`, "_blank");
-                });
-
+            
 
 				// =============================
 				// 🔥 半屏候选词：DOM 引用
