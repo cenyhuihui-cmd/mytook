@@ -12503,15 +12503,7 @@
                         });
 
                         // AI 咨询
-                        items.push({
-                            text: "🤖 AI 咨询",
-                            disabled: !this.msgattr.plain_data_text,
-                            callback: () => {
-                                if (!this.msgattr.plain_data_text) return;
-                                const prompt = build_ai_teacher_prompt(this.msgattr.plain_data_text);
-                                window.open(`https://chatgpt.com/?q=${encodeURIComponent(prompt)}`, "_blank");
-                            }
-                        });
+                       
 
                         // 自己的消息才可编辑/撤回/删除
                         if (this.sent_by_me) {
