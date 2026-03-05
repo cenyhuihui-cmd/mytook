@@ -12191,19 +12191,7 @@
                                         // =========================
                                         // 🤖 AI 咨询（新增）
                                         // =========================
-                                        const aiConsultItem = {
-                                            type: "button",
-                                            text: "🤖 AI 咨询",
-                                            callback: event => {
-                                                if (!this.msgattr.plain_data_text) return;
-
-                                                const prompt = build_ai_teacher_prompt(this.msgattr.plain_data_text);
-                                                const encodedPrompt = encodeURIComponent(prompt);
-
-                                                // 跳转 AI 咨询页面
-                                                window.open(`https://chatgpt.com/?q=${encodedPrompt}`, "_blank");
-                                            },
-                                        };
+                                       
                                         items.push(aiConsultItem, { type: "section", text: "" });
 
                                         if (!this.msgattr.plain_data_text) {
